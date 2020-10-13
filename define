@@ -1,0 +1,47 @@
+#this hello.py is an experimental sandbox
+
+import sys
+
+
+
+#softDictionary = {
+#  "obsequious": "adj. excessively or esp. sarcastically servile",
+#  "meriticious": "adj. specious",
+#  "specious": " adj. deceptively plausable, but fallacious",
+#}
+softDictionary = dict()
+
+dictionaryfileAppend = open("dictionary","at")
+
+dictionaryfileRead = open("dictionary","rt")
+for line in dictionaryfileRead:
+  splitline = line.split(":",2)
+  softDictionary.update({splitline[0]: splitline[1]})
+
+def define(y):
+  del sys.argv[0]
+  for x in y:
+    if x in softDictionary:
+      print(x)
+      print (softDictionary[x])
+    else:
+      print(x)
+      print("Word not defined please enter definition or press return to skip")
+      definition = input()
+      if definition:
+        print("New entry:")
+        print(x)
+        print(definition)
+        satisfied = False
+        while satisfied != True:
+          print("Are you sure? case sensitive")
+          yorn = input("S submit, R retry, D discard: ")
+          if yorn == "S":
+             softDictionary.update({x : definition})
+             dictionaryfileAppend.write(x+":"+definition+"\n")
+             print("Entry submitted")
+             satisfied = True
+          elif yorn == "D":
+            satisfied = True
+
+define(sys.argv);
