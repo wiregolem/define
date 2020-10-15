@@ -1,21 +1,21 @@
-#Define
+# Define
 A dictionary lookup and appending script in python3
 
-#Installation
+## Installation
 You may already have python installed on your machine! However:
 python3 installation instruction can be found [here](https://wiki.python.org/moin/BeginnersGuide/Download)
 
-#Clone
+## Clone
 Clone the repository using git:
 `git clone https://github.com/wiregolem/define.git`
 or with Github CLI:
 `gh repo clone wiregolem/define`
 
-#Usage
+## Usage
 `python3 define [args]`
 where args represents n number of words to be looked up in the dictionary file
 
-#Expected behavior 
+## Expected behavior 
 1. The script will loop over each argument, checking for it's definition in the supplied dictionary file
 2. With every iteration, if a word is found, the word and it's definition will be output to console
 3. This loop ends when the dictionary file does not contain a the specified word, instead:
